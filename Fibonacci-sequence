@@ -1,0 +1,34 @@
+#include <vector>
+#include <iostream>
+#include <algorithm>
+template <typename T>
+std::vector<T> fib(T sum, const T iterations) {
+	int current { };
+	int next { 1 };
+	int counter { };
+	std::vector<int> fibonacci{};
+	while (counter <= iterations) {
+		sum = current + next;
+		fibonacci.push_back(sum);
+		current = next;
+		next = sum;
+		++counter;
+	}
+	return fibonacci;
+}
+template <typename T>
+std::vector<T> getFib() {
+	int startingSum = 0;
+	int iterationAmounts = 0;
+	std::cout << "Please Enter the number of terms: ";
+	std::cin >> iterationAmounts;
+	return fib(startingSum, iterationAmounts);
+}
+
+int main()
+{
+	auto fibonacci = getFib<int>();
+	for (int el : fibonacci) {
+		std::cout << el << '\n';
+	}
+}
