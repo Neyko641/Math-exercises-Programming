@@ -5,7 +5,7 @@ template <typename T>
 std::vector<T> fib(T sum, const T iterations) {
 	int current { };
 	int next { 1 };
-	int counter { };
+	int counter { 2 };
 	std::vector<int> fibonacci{};
 	while (counter <= iterations) {
 		sum = current + next;
