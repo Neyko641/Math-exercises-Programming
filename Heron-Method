@@ -1,0 +1,15 @@
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+template <typename T>
+auto HeronMethod(T x, T g) {
+	return (g + x / g) / 2;
+}
+
+int main() {
+	float x;
+	float g;
+	std::cout << "Enter two numbers and to find a square root using Heron's method" << '\n';
+	std::cin >> g >> x;
+	std::cout << std::setprecision(2) << std::pow(HeronMethod(x, g),2);
+}
